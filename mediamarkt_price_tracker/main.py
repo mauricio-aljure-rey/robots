@@ -1,4 +1,5 @@
-# Amazon tracking program that sends email once a product has reaached a desired value.
+# Mediamarkt tracking program that sends email once a product has reaached a desired value.
+# Unfortunately, mediamarkt has left Sweden. 
 
 import json
 import requests

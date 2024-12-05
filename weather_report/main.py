@@ -1,4 +1,4 @@
-# Taken from online course
+# Weather forecast with yr 
 
 import requests
 import json
@@ -47,13 +47,12 @@ answer = requests.get(endpoint["endpoint"], params=endpoint["params"], headers=y
 
 data = answer.json()
 # Obtaining a list of dictionaries, hour by hour.
-# First key is "time" in format "2022-05-21T13:00:00Z"
+# First key is "time" in format "2022-05-21T13:00:0ZZ" 0
 # Key "data" is a dictionary with dictionaries.
 data = data["properties"]["timeseries"]
 print(json.dumps(data, indent=3))
 
 # Creating a new list of dictionaries with the information from the precipitation only.
-# This I might use later when attempting to forecast the solar panel productivity.
 next_hour_rain_data = []
 for idx, item in enumerate(data):
     try:
@@ -65,7 +64,6 @@ for idx, item in enumerate(data):
         pass
 
 # Going through the data and collecting when it is raining.
-# This is what it is actually required for the course.
 raining_at = []
 for item in next_hour_rain_data:
     if item["precipitation_amount"] > 0:

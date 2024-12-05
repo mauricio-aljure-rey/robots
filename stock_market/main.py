@@ -1,4 +1,5 @@
 # API for retrieving stock market prices
+# Sends email with most important news on the company_name
 
 import os
 import requests
